@@ -21,7 +21,9 @@ int do_pwd(int argc, char** argv) {
   if (!validate_pwd_argv(argc, argv))
     return -1;
 
-  // TODO: Fill it!
+  char *a;
+  a = getcwd(a,80);
+  printf("%s\n", a);
 
   return 0;
 }
