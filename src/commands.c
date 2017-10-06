@@ -3,10 +3,17 @@
 #include "commands.h"
 
 int do_cd(int argc, char** argv) {
+
+  int result = 0;
   if (!validate_cd_argv(argc, argv))
     return -1;
+  else{
+ 	result = chdir(argv[1]);
+	if(result == -1) printf("Changing Fail\n");
+	else printf("Changing Completed\n");
 
-  // TODO: Fill it!
+  }
+  
   return 0;
 }
 
