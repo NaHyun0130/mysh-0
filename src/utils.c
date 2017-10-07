@@ -13,14 +13,14 @@ void mysh_parse_command(const char* command,
   *argv = (char**)malloc(80*sizeof(char*));
    a = *argv;
    
-  temp = strtok(command, "' ', \n");
+  temp = strtok(command, "' ', \n, \t");
 
   while(temp != NULL)
   {
 	a[count] = (char*)malloc(80*sizeof(char));
 	strcpy(a[count], temp);
 	count++;
-	temp = strtok(NULL,"' ', \n");	
+	temp = strtok(NULL,"' ', \n, \t");	
   }
 
   *argc = count;
