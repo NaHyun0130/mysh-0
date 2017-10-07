@@ -7,17 +7,17 @@ void mysh_parse_command(const char* command,
   char* temp;
   char** a;
 
-  *argv = (char**)malloc(sizeof(char*));
+  *argv = (char**)malloc(80*sizeof(char*));
    a = *argv;
    
-  temp = strtok(command, " \n");
+  temp = strtok(command, "' ', \n");
 
   while(temp != NULL)
   {
 	test[count] = (char*)malloc(80*sizeof(char));
 	strcpy(test[count], temp);
 	count++;
-	temp = strtok(NULL," \n");	
+	temp = strtok(NULL,"' ', \n");	
   }
 
   *argc = count;
