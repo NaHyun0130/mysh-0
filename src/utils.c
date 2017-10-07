@@ -14,8 +14,8 @@ void mysh_parse_command(const char* command,
 
   while(temp != NULL)
   {
-	test[count] = (char*)malloc(80*sizeof(char));
-	strcpy(test[count], temp);
+	a[count] = (char*)malloc(80*sizeof(char));
+	strcpy(a[count], temp);
 	count++;
 	temp = strtok(NULL,"' ', \n");	
   }
