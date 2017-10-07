@@ -5,7 +5,7 @@
 #include "commands.h"
 #include "utils.h"
 
-static void release_argv(int argc, char** argv);
+static void release_argv(int argc, char*** argv);
 
 int main()
 {
@@ -20,7 +20,7 @@ int main()
 
     if (strcmp(argv[0], "") == 0) {
       goto release_and_continue;
-    } else if (strcmp(strcmp(argv[0], "cd")) == 0) {
+    } else if (strcmp(argv[0], "cd") == 0) {
       if (do_cd(argc, argv)) {
         fprintf(stderr, "cd: Invalid arguments\n");
       }
