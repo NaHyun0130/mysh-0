@@ -28,14 +28,14 @@ int do_pwd(int argc, char** argv) {
 
 int validate_cd_argv(int argc, char** argv) {
   
-  if(argc != 2) return 0;
+  if(argc == 2 || strcmp(argv[0],"cd") == 0) return 1;
  
-  return 1;
+  return 0;
 }
 
 int validate_pwd_argv(int argc, char** argv) {
  
-  if(argc != 1) return 0;
+  if(argc == 1 || strcmp(argv[0],"pwd") == 0) return 1;
 
-  return 1;
+  return 0;
 }
